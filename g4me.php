@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>G4Me Signup</title>
+    <title>G4ME</title>
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
 
@@ -23,6 +23,97 @@
                 display: none; /* Hide the carousel text when the screen is less than 600 pixels wide */
             }
         }
+        @import url(http://fonts.googleapis.com/css?family=Roboto+Slab:400,700,300,100|Open+Sans:400,700,300,600,800|Oswald:400,700,300);
+        *,
+        *:before,
+        *:after {
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;
+            padding: 0;
+            margin: 0;
+        }
+        html {
+            height: 100%;
+        }
+        body {
+            background-color: #f1595a;
+            font-size: 19px;
+            font-family: 'Open Sans', 'sans-serif';
+            color: #414141;
+            font-weight: 300;
+            height: 100%;
+        }
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            margin-bottom: 0.8em;
+        }
+        ul {
+            margin-left: 40px;
+        }
+        ::selection {
+            background: #ffffff;
+        }
+        .wrap {
+            max-width: 1200px;
+            padding: 0 0 100px 0;
+            overflow: hidden;
+            margin: 0 auto;
+        }
+        @media screen and (max-width: 768px) {
+            .wrap {
+                padding: 0 3% 10px 3%;
+            }
+        }
+        .column {
+            box-shadow: 2px 2px 0 1px rgba(0, 0, 0, 0.25);
+            background: #efefef;
+            border-radius: 2px;
+            padding: 20px;
+            width: calc(46.66666667%);
+            margin: 0 calc(1.66666667%) 20px;
+            display: block;
+            float: left;
+        }
+        .column ::selection {
+            background: #f9b7b7;
+        }
+        @media screen and (max-width: 768px) {
+            .column {
+                margin: 0 0 20px 0;
+                width: 100%;
+            }
+        }
+        .header {
+            max-width: 1200px;
+            text-align: center;
+            margin: 50px auto;
+        }
+        .header h1 {
+            text-shadow: 4px 4px 0 rgba(0, 0, 0, 0.6);
+            text-transform: uppercase;
+            font-family: 'Oswald', 'sans-serif';
+            letter-spacing: 10px;
+            margin-bottom: 15px;
+            color: #efefef;
+            font-weight: 300;
+            font-size: 4.1em;
+        }
+        .header p {
+            color: rgba(0, 0, 0, 0.6);
+            font-family: 'Roboto Slab', 'serif';
+            line-height: 1.3em;
+            font-size: 1.4em;
+            font-weight: 500;
+            max-width: 55%;
+            margin: auto;
+        }
+
+
     </style>
 </head>
 <body>
@@ -91,17 +182,41 @@
         <span class="sr-only">Next</span>
     </a>
 </div>
-<img src="#" alt="image">
-<p style="text-align: center">This is a test for columns</p>
+<div class="wrap">
+    <div class="header">
+        <h1>G4ME</h1>
+        <p>Game purchasing the way its meant to 2B.</p>
+    </div>
+
+    <div class="column">
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed posuere eget nulla a pharetra. Suspendisse ac venenatis odio. Sed blandit posuere erat a posuere. Suspendisse odio erat, elementum sodales ante vel, malesuada rutrum turpis.</p>
+    </div>
+    <div class="column">
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed posuere eget nulla a pharetra. Suspendisse ac venenatis odio. Sed blandit posuere erat a posuere. Suspendisse odio erat, elementum sodales ante vel, malesuada rutrum turpis.</p>
+    </div>
+    <div class="column">
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed posuere eget nulla a pharetra. Suspendisse ac venenatis odio. Sed blandit posuere erat a posuere. Suspendisse odio erat, elementum sodales ante vel, malesuada rutrum turpis.</p>
+    </div>
+    <div class="column">
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed posuere eget nulla a pharetra. Suspendisse ac venenatis odio. Sed blandit posuere erat a posuere. Suspendisse odio erat, elementum sodales ante vel, malesuada rutrum turpis.</p>
+    </div>
+
+    <div class="footer">
+        <p></p>
+    </div>
 </div>
-<div class=".col-md-4">
-    <img src="#" alt="image">
-    <p style="text-align: center">This is a test for columns</p>
-</div>
-<div class=".col-md-4">
-    <img src="#" alt="image">
-    <p style="text-align: center">This is a test for columns</p>
-</div>
+<footer>
+<nav class="navbar navbar-inverse navbar-fixed-bottom">
+    <div class="container-fluid">
+        <ul class="nav navbar-nav">
+            <li class="active"><a href="#">Home</a></li>
+            <li><a href="#">Page 1</a></li>
+            <li><a href="#">Page 2</a></li>
+            <li><a href="#">Page 3</a></li>
+        </ul>
+    </div>
+</nav>
+</footer>
 <script>
     $('.carousel').carousel();
 </script>
