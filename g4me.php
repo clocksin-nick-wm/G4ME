@@ -37,10 +37,8 @@
             height: 100%;
         }
         body {
-            background-color: #f1595a;
             font-size: 19px;
             font-family: 'Open Sans', 'sans-serif';
-            color: #414141;
             font-weight: 300;
             height: 100%;
         }
@@ -55,9 +53,7 @@
         ul {
             margin-left: 40px;
         }
-        ::selection {
-            background: #ffffff;
-        }
+
         .wrap {
             max-width: 1200px;
             padding: 0 0 100px 0;
@@ -189,13 +185,16 @@
     </div>
 
     <div class="column">
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed posuere eget nulla a pharetra. Suspendisse ac venenatis odio. Sed blandit posuere erat a posuere. Suspendisse odio erat, elementum sodales ante vel, malesuada rutrum turpis.</p>
+        <h2 style="text-align: center">Weekly Deals</h2>
+        <p>G4ME aims to offer outstanding deals, so each week we offer weekly deals to help the consumer save money.</p>
     </div>
     <div class="column">
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed posuere eget nulla a pharetra. Suspendisse ac venenatis odio. Sed blandit posuere erat a posuere. Suspendisse odio erat, elementum sodales ante vel, malesuada rutrum turpis.</p>
+        <h2 style="text-align: center">Monthly Subscription</h2>
+        <p>For only $20 a month you will get 5 games in a pack. All games are top quality.</p>
     </div>
     <div class="column">
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed posuere eget nulla a pharetra. Suspendisse ac venenatis odio. Sed blandit posuere erat a posuere. Suspendisse odio erat, elementum sodales ante vel, malesuada rutrum turpis.</p>
+        <h2 style="text-align: center">Idea</h2>
+        <p>G4ME was designed to sell top games at low prices and to give a percentage of profit earned to charity.</p>
     </div>
     <div class="column">
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed posuere eget nulla a pharetra. Suspendisse ac venenatis odio. Sed blandit posuere erat a posuere. Suspendisse odio erat, elementum sodales ante vel, malesuada rutrum turpis.</p>

@@ -30,5 +30,52 @@
         </ul>
     </div>
 </nav>
+<style>
+    .logo-small {
+        color: blue;
+        font-size: 50px;
+    }
+
+    .logo {
+        color: blue;
+        font-size: 200px;
+    }
+    .logo {
+        font-size: 200px;
+    }
+    @media screen and (max-width: 768px) {
+        .col-sm-4 {
+            text-align: center;
+            margin: 25px 0;
+        }
+    }
+</style>
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-8">
+            <h2>About G4ME</h2>
+            <h4>Lorem ipsum..</h4>
+            <p>Lorem ipsum..</p>
+            <button class="btn btn-default btn-lg">Get in Touch</button>
+        </div>
+        <div class="col-sm-4">
+            <span class="glyphicon glyphicon-gift logo"></span>
+        </div>
+    </div>
+</div>
+
+<div class="container-fluid bg-grey">
+    <div class="row">
+        <div class="col-sm-4">
+            <span class="glyphicon glyphicon-eye-open logo"></span>
+        </div>
+        <div class="col-sm-8">
+            <h2>Our Ideals</h2>
+            <h4><strong>MISSION:</strong> Give Games to Those Who Love Games</h4>
+            <p><strong>VISION:</strong> Gain a Profit and Give Back to Charity</p>
+        </div>
+    </div>
+</div>
 </body>
 </html>
