@@ -42,29 +42,22 @@
 </head>
 <body>
 <style>
+    #row3 {
+        align-items: center;
+        align-content: center;
+        margin-left: 460px;
+    }
     @import url(http://fonts.googleapis.com/css?family=Roboto+Condensed:400,400italic,700,700italic);
     @import url(http://code.ionicframework.com/ionicons/2.0.0/css/ionicons.min.css);
-    *{
-        margin: 0;
-        padding: 0;
-        font-family: 'Roboto Condensed', sans-serif;
-    }
-    html{
-        background: #2C3A43;
-    }
-    body{}
     img{
         width: 100%;
     }
-    #page{
-        width: 70%;
-        margin: 30px auto;
-    }
+
     .content{
         text-align: center;
     }
     h2, small{
-        color: #4BEFF2;
+        color: orangered;
         text-transform: uppercase;
     }
     small{
@@ -72,7 +65,7 @@
     }
 
     a{
-        color: #4BEFF2;
+        color: orangered;
         text-decoration: none;
         transition: .3s;
         -webkit-transition: .3s;
@@ -96,7 +89,7 @@
         display: inline-block;
         vertical-align: top;
         text-align: center;
-        color: #45616C;
+        color: #489d1e;
         margin-top: 30px;
         margin-right: 50px;
         transition: .5s;
@@ -106,7 +99,7 @@
         margin-right: 0;
     }
     .product-items .product-item:hover{
-        color: #4DC3C7;
+        color: orangered;
     }
     .product-items .product-item  .item-wrap{
         width: 130px;
@@ -175,7 +168,7 @@
     }
     /*-----*/
     .wrap-qtt-field-qtt input{
-        background: #2c3a43;
+        background: mediumpurple;
         border: 2px solid #4dc3c7;
         border-radius: 50%;
         color: #fff;
@@ -213,11 +206,11 @@
     .product-items .product-item .item-info .item-price{
         text-transform: uppercase;
         font-weight: bold;
-        color: #4BEFF2;
+        color: orange;
     }
     .product-items .product-item .item-info .item-price{
         font-size: 15px;
-        color: #4DC3C7;
+        color: blueviolet;
     }
     .link{
         position: absolute;
@@ -289,7 +282,7 @@
             </div>
             <div class="product-item">
                 <div class="item-wrap">
-                    <img src="Games/Bioshock.jpg">
+                    <img src="Games/Bioshocl.jpg">
                     <div class="wrap-qtt">
                         <div class="wrap-qtt-field-qtt">
                             <input class="field-qtt" name="qtt" value="1" readonly=""/>
@@ -301,7 +294,7 @@
                     </div>
                 </div>
                 <div class="item-info">
-                    <div class="item-title">Bioshock Trilogy</div>
+                    <div class="item-title">Bioshock</div>
                     <div class="item-price" data-price="15">$15</div>
                 </div>
             </div>
@@ -328,7 +321,7 @@
                 <!-- end item -->
                 <div class="product-item">
                     <div class="item-wrap">
-                        <img src="Games/xcom2.jpg">
+                        <img src="Games/Shadow%20Of%20Mordor.jpg">
                         <div class="wrap-qtt">
                             <div class="wrap-qtt-field-qtt">
                                 <input class="field-qtt" name="qtt" value="1" readonly=""/>
@@ -340,13 +333,13 @@
                         </div>
                     </div>
                     <div class="item-info">
-                        <div class="item-title">XCOM 2</div>
-                        <div class="item-price" data-price="35">$35</div>
+                        <div class="item-title">Shadow of Mordor</div>
+                        <div class="item-price" data-price="8">$8</div>
                     </div>
                 </div>
                 <div class="product-item">
                     <div class="item-wrap">
-                        <img src="Games/Bioshock.jpg">
+                        <img src="Games/Skyrim.jpg">
                         <div class="wrap-qtt">
                             <div class="wrap-qtt-field-qtt">
                                 <input class="field-qtt" name="qtt" value="1" readonly=""/>
@@ -358,13 +351,75 @@
                         </div>
                     </div>
                     <div class="item-info">
-                        <div class="item-title">Bioshock Trilogy</div>
-                        <div class="item-price" data-price="15">$15</div>
+                        <div class="item-title">Skyrim Legendary <br> Edition</div>
+                        <div class="item-price" data-price="7">$7</div>
                     </div>
                 </div>
 
             </div>
         </div>
     </div>
+    <div id="row3">
+    <div class="product-items">
+        <!-- start item -->
+        <div class="product-item">
+            <div class="item-wrap">
+                <img src="Games/Titanfall.jpg">
+                <div class="wrap-qtt">
+                    <div class="wrap-qtt-field-qtt">
+                        <input class="field-qtt" name="qtt" value="1" readonly=""/>
+                    </div>
+                    <div class="wrap-qtt-minus-plus">
+                        <button class="btn-cart-qtt btn-plus"><i class="ion-plus-round"></i></button>
+                        <button class="btn-cart-qtt btn-minus"><i class="ion-minus-round"></i></button>
+                    </div>
+                </div>
+            </div>
+            <div class="item-info">
+                <div class="item-title">Titanfall</div>
+                <div class="item-price" data-price="10">$10</div>
+            </div>
+        </div>
+        <!-- end item -->
+        <div class="product-item">
+            <div class="item-wrap">
+                <img src="Games/WatchDogs.jpg">
+                <div class="wrap-qtt">
+                    <div class="wrap-qtt-field-qtt">
+                        <input class="field-qtt" name="qtt" value="1" readonly=""/>
+                    </div>
+                    <div class="wrap-qtt-minus-plus">
+                        <button class="btn-cart-qtt btn-plus"><i class="ion-plus-round"></i></button>
+                        <button class="btn-cart-qtt btn-minus"><i class="ion-minus-round"></i></button>
+                    </div>
+                </div>
+            </div>
+            <div class="item-info">
+                <div class="item-title">Watch Dogs</div>
+                <div class="item-price" data-price="5">$5</div>
+            </div>
+        </div>
+        <div class="product-item">
+            <div class="item-wrap">
+                <img src="Games/SuperHot.jpg">
+                <div class="wrap-qtt">
+                    <div class="wrap-qtt-field-qtt">
+                        <input class="field-qtt" name="qtt" value="1" readonly=""/>
+                    </div>
+                    <div class="wrap-qtt-minus-plus">
+                        <button class="btn-cart-qtt btn-plus"><i class="ion-plus-round"></i></button>
+                        <button class="btn-cart-qtt btn-minus"><i class="ion-minus-round"></i></button>
+                    </div>
+                </div>
+            </div>
+            <div class="item-info">
+                <div class="item-title">Super Hot</div>
+                <div class="item-price" data-price="15">$15</div>
+            </div>
+        </div>
+
+    </div>
+</div>
+</div>
 </body>
 </html>

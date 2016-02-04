@@ -197,7 +197,8 @@
         <p>G4ME was designed to sell top games at low prices and to give a percentage of profit earned to charity.</p>
     </div>
     <div class="column">
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed posuere eget nulla a pharetra. Suspendisse ac venenatis odio. Sed blandit posuere erat a posuere. Suspendisse odio erat, elementum sodales ante vel, malesuada rutrum turpis.</p>
+        <h2 style="text-align: center">Charity</h2>
+        <p>G4ME aids to help charities while gaining a profit. For every dollar earned 20% goes to different charity associations.</p>
     </div>
 
     <div class="footer">
@@ -205,7 +206,7 @@
     </div>
 </div>
 <footer>
-<nav class="navbar navbar-inverse navbar-fixed-bottom">
+<nav class="navbar navbar-inverse">
     <div class="container-fluid">
         <ul class="nav navbar-nav">
             <li class="active"><a href="#">Home</a></li>
