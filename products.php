@@ -223,7 +223,7 @@
 <nav class="navbar navbar-inverse">
     <div class="container-fluid">
         <div class="navbar-header">
-            <img src="Logo/G4me%20logo.png" width="100px" height="50px">
+            <img src="Logo/G4me%20logo.png" width="100px" height="50px" id="test">
         </div>
         <ul class="nav navbar-nav">
             <li><a href="g4me.php">Home</a></li>

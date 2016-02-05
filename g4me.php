@@ -11,6 +11,10 @@
     <!-- Latest compiled JavaScript -->
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
     <style>
+        #align_nav {
+            text-align: right;
+            text-decoration: none;
+        }
         .carousel-inner img {
             width: 80%; /* Set width to 100% */
             margin: auto;
@@ -208,11 +212,11 @@
 <footer>
 <nav class="navbar navbar-inverse">
     <div class="container-fluid">
-        <ul class="nav navbar-nav">
-            <li class="active"><a href="#">Home</a></li>
-            <li><a href="#">Page 1</a></li>
-            <li><a href="#">Page 2</a></li>
-            <li><a href="#">Page 3</a></li>
+        <ul class="nav navbar-nav navbar-right">
+            <li class="active"><a href="g4me.php">Home</a></li>
+            <li><a href="products.php">Games</a></li>
+            <li><a href="cart.php">Cart</a></li>
+            <li><a href="about.php">About</a></li>
         </ul>
     </div>
 </nav>
