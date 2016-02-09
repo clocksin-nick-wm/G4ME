@@ -118,9 +118,9 @@ table>tbody>tr>img{
                 <div class="col-sm-4">
                     <div class="thumbnail">
                         <img src="Games/Skyrim.jpg" alt="E3" width="460" height="215">
-                        <p><strong>Skyrim</strong></p>
-                        <p><strong style="color: red; "><strike>$20.00</strike></strong></p>
-                        <p style="color: red">55% Off</p>
+                        <p><strong>The Witness</strong></p>
+                        <p><strong style="color: red; "><strike>$39.99</strike></strong></p>
+                        <p style="color: red">45% Off</p>
                         <p>$9</p>
                         <button class="btn">Add to Cart</button>
                     </div>
@@ -128,20 +128,20 @@ table>tbody>tr>img{
                 <div class="col-sm-4">
                     <div class="thumbnail">
                         <img src="Games/The%20Division.jpg" alt="Division" width="460" height="287.5">
-                        <p><strong>Tom Clancy's The Division</strong></p>
+                        <p><strong>Rise of the Tomb Raider</strong></p>
                         <p><strong style="color: red; "><strike>$59.99</strike></strong></p>
-                        <p style="color: red">75% Off</p>
-                        <p>$19.99</p>
+                        <p style="color: red">50% Off</p>
+                        <p>$29.99</p>
                         <button class="btn">Add to Cart</button>
                     </div>
                 </div>
                 <div class="col-sm-4">
                     <div class="thumbnail">
                         <img src="Games/Assassins%20Creed.jpg" alt="Assassins" width="460" height="287.5">
-                        <p><strong>Assassins's Creed Syndicate</strong></p>
+                        <p><strong>Fallout 4</strong></p>
                         <p><strong style="color: red; "><strike>$59.99</strike></strong></p>
-                        <p style="color: red">35% Off</p>
-                        <p>$38.99</p>
+                        <p style="color: red">97% Off</p>
+                        <p>$1.79</p>
                         <button class="btn">Add to Cart</button>
                     </div>
                 </div>
