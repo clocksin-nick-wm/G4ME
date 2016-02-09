@@ -2,6 +2,13 @@
 <html lang="en">
 <head>
     <title>G4ME Guest Checkout</title>
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 </head>
 <body>
 <style>
@@ -16,7 +23,7 @@
 </style>
 <?php
 try {
-    $dbh = new PDO('mysql:host=127.0.0.1;dbname=G4ME', 'root', 'root');
+    $dbh = new PDO('mysql:host=127.0.0.1;dbname=G4ME', 'root', '');
 
 } catch (PDOException $e) {
     print "Error!: " . $e->getMessage() . "<br/>";
@@ -83,17 +90,53 @@ if(@$_POST['formSubmit'] == "Submit")
 }
 
 ?>
-<div id="form">
-<form id="info" action="guestCheckout.php" method="post">
-    <input type="text"  name="fName" maxlength="45" placeholder="First Name"><br>
-    <input type="text"  name="lName" maxlength="45" placeholder="Last Name"><br>
+<nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <img src="Logo/G4me%20logo.png" width="125px" height="50px">
+        </div>
+        <ul class="nav navbar-nav">
+            <li><a href="g4me.php">Home</a></li>
+            <li><a href="about.php">About Us/Contact</a></li>
+            <li><a href="products.php">Games</a></li>
+            <li><a href="sales.php">Sales</a></li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+            <li class="active"><a href="cart.php"><span class="glyphicon glyphicon-shopping-cart"></span>Cart</a> </li>
+            <li><a href="createAccount.php"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+            <li><a href="signin.php"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+        </ul>
+    </div>
+</nav>
+<div class="container">
+<form id="info" action="guestCheckout.php" method="post" role="form">
+    <div class="form-group">
+        <div class="form-group has-success has-feedback">
+        <label>First Name:</label>
+    <input type="text"  name="fName" maxlength="45" placeholder="John">
+        </div>
+    </div>
+    <div class="form-group">
+        <label>Last Name:</label>
+    <input type="text"  name="lName" maxlength="45" placeholder="Smith">
+    </div>
+    <div class="form-group">
+        <label>Email:</label>
     <input type="email" name="email" maxlength="45" placeholder="example@aol.com"><br>
+    </div>
+    <div class="form-group">
+        <label>Address:</label>
     <input type="text" name="address" maxlength="255" placeholder="Address"><br>
-    Country:<select>
+    </div>
+    <div class="form-group">
+        <label>Country:</label>
+        <select>
         <option>United States</option>
         <option>United Kingdom</option>
-    </select><br>
-    State:<select>
+    </select>
+    </div>
+   <div class="form-group">
+       <label>State: </label><select>
         <option value=""></option>
         <option>AL</option>
         <option>Ak</option>
@@ -145,19 +188,33 @@ if(@$_POST['formSubmit'] == "Submit")
         <option>WV</option>
         <option>WI</option>
         <option>WY</option>
-    </select><br>
-    <input type="text" name="city" maxlength="255" placeholder="City"><br>
-    <input type="number" name="apt" maxlength="10" placeholder="Apt. #"><br>
-    Card Type:<select  id="paymentType" form="info" action="guestCheckout.php">
+    </select><br></div>
+    <div class="form-group">
+        <label>City:</label>
+        <input type="text" name="city" maxlength="255" placeholder="Hogwarts"><br>
+    </div>
+    <div class="form-group">
+        <label>Apt:</label>
+        <input type="number" name="apt" maxlength="10" placeholder="Apt. #"><br>
+    </div>
+    <div class="form-group">
+        <label>Payment Type:</label>
+        <select  id="paymentType" form="info" action="guestCheckout.php">
         <option value="" selected></option>
         <option value="Visa">Visa</option>
         <option value="Master Card">Master Card</option>
         <option value="American Express">American Express</option>
         <option value="Discover">Discover</option>
-    </select><br>
-    Credit Card:<input type="number" name="payment" maxlength="16" placeholder="xxxx-xxxx-xxxx-xxxx"><br>
-    Security Code:<input type="number" name="code" maxlength="4" placeholder="xxx">
-    <button type="submit" name="formSubmit" value="Submit">Submit</button>
+    </select>
+    </div>
+    <div class="form-group">
+    <label>Credit Card</label>
+    <input type="number" name="payment" maxlength="16" placeholder="xxxx-xxxx-xxxx-xxxx"><br>
+    </div>
+    <div class="form-group">
+        <label>Security Code</label><input type="number" name="code" maxlength="4" placeholder="xxx">
+    </div>
+        <button type="submit" name="formSubmit" value="Submit">Submit</button>
 
 </form>
 </div>

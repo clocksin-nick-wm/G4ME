@@ -11,6 +11,9 @@
     <!-- Latest compiled JavaScript -->
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
     <style>
+        body {
+            font: 'Roboto Slab', 'serif';
+        }
         #align_nav {
             text-align: right;
             text-decoration: none;
