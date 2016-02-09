@@ -1,7 +1,95 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>G4Me Games</title>
+    <?php
+    session_start();
+    include_once("config.php");
+    ?>
+    <div class="products">
+        <?php
+        $current_url = urlencode($url="http://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI']);
+
+        $results = $mysqli->query("SELECT product_code, product_name, product_desc, product_img_name, price FROM products ORDER BY id ASC");
+        if($results){
+            $products_item = '<ul class="products">';
+//fetch results set as object and output HTML
+            while($obj = $results->fetch_object())
+            {
+                $products_item .= <<<EOT
+    <li class="product">
+    <form method="post" action="cart_update.php">
+    <div class="product-content"><h3>{$obj->product_name}</h3>
+    <div class="product-thumb"><img src="images/{$obj->product_img_name}"></div>
+    <div class="product-desc">{$obj->product_desc}</div>
+    <div class="product-info">
+    Price {$currency}{$obj->price}
+
+    <fieldset>
+
+    <label>
+        <span>Quantity</span>
+        <input type="text" size="2" maxlength="2" name="product_qty" value="1" />
+    </label>
+
+    </fieldset>
+    <input type="hidden" name="product_code" value="{$obj->product_code}" />
+    <input type="hidden" name="type" value="add" />
+    <input type="hidden" name="return_url" value="{$current_url}" />
+    <div align="center"><button type="submit" class="add_to_cart">Add</button></div>
+    </div></div>
+    </form>
+    </li>
+EOT;
+            }
+            $products_item .= '</ul>';
+            echo $products_item;
+        }
+        ?>
+    </div>
+    <div class="shopping-cart">
+        <h2>Your Shopping Cart</h2>
+        <?php
+        if(isset($_SESSION["cart_products"]) && count($_SESSION["cart_products"])>0)
+        {
+            echo '<div class="cart-view-table-front" id="view-cart">';
+            echo '<h3>Your Shopping Cart</h3>';
+            echo '<form method="post" action="cart_update.php">';
+            echo '<table width="100%"  cellpadding="6" cellspacing="0">';
+            echo '<tbody>';
+
+            $total =0;
+            $b = 0;
+            foreach ($_SESSION["cart_products"] as $cart_itm)
+            {
+                $product_name = $cart_itm["product_name"];
+                $product_qty = $cart_itm["product_qty"];
+                $product_price = $cart_itm["product_price"];
+                $product_code = $cart_itm["product_code"];
+                $product_color = $cart_itm["product_color"];
+                $bg_color = ($b++%2==1) ? 'odd' : 'even'; //zebra stripe
+                echo '<tr class="'.$bg_color.'">';
+                echo '<td>Qty <input type="text" size="2" maxlength="2" name="product_qty['.$product_code.']" value="'.$product_qty.'" /></td>';
+                echo '<td>'.$product_name.'</td>';
+                echo '<td><input type="checkbox" name="remove_code[]" value="'.$product_code.'" /> Remove</td>';
+                echo '</tr>';
+                $subtotal = ($product_price * $product_qty);
+                $total = ($total + $subtotal);
+            }
+            echo '<td colspan="4">';
+            echo '<button type="submit">Update</button><a href="view_cart.php" class="button">Checkout</a>';
+            echo '</td>';
+            echo '</tbody>';
+            echo '</table>';
+
+            $current_url = urlencode($url="http://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI']);
+            echo '<input type="hidden" name="return_url" value="'.$current_url.'" />';
+            echo '</form>';
+            echo '</div>';
+
+        }
+        ?>
+    </div>
+    <title>G4Me Sales</title>
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
 
@@ -42,19 +130,24 @@
 </head>
 <body>
 <style>
-table>tbody>tr>img{
+    table>tbody>tr>img{
     height: 200px;
     width: 300px;
-}
+    }
     #row1 {
         align-content: center;
         margin-left: 50px;
     }
-#row2 {
+    #row2 {
     align-content: center;
     margin-left: 50px;
     text-align: center;
-}
+    }
+    #row3 {
+        align-content: center;
+        margin-left: 50px;
+        text-align: center;
+    }
 </style>
 <nav class="navbar navbar-inverse">
     <div class="container-fluid">
@@ -81,7 +174,7 @@ table>tbody>tr>img{
             <div class="row text-center">
                 <div class="col-sm-4">
                     <div class="thumbnail">
-                        <img src="Games/Skyrim.jpg" alt="E3" width="460" height="215">
+                        <a href="https://www.youtube.com/watch?v=JQtTD5K52xI"><img src="Games/Skyrim.jpg" alt="E3" width="460" height="215"></a>
                         <p><strong>Skyrim</strong></p>
                         <p><strong style="color: red; "><strike>$20.00</strike></strong></p>
                         <p style="color: red">55% Off</p>
@@ -91,7 +184,7 @@ table>tbody>tr>img{
                 </div>
                 <div class="col-sm-4">
                     <div class="thumbnail">
-                        <img src="Games/The%20Division.jpg" alt="Division" width="460" height="287.5">
+                        <img src="Games/The%20Division.jpg" alt="Division" width="460" height="215">
                         <p><strong>Tom Clancy's The Division</strong></p>
                         <p><strong style="color: red; "><strike>$59.99</strike></strong></p>
                         <p style="color: red">75% Off</p>
@@ -101,7 +194,7 @@ table>tbody>tr>img{
                 </div>
                 <div class="col-sm-4">
                     <div class="thumbnail">
-                        <img src="Games/Assassins%20Creed.jpg" alt="Assassins" width="460" height="287.5">
+                        <img src="Games/Assassins%20Creed.jpg" alt="Assassins" width="460" height="215">
                         <p><strong>Assassins's Creed Syndicate</strong></p>
                         <p><strong style="color: red; "><strike>$59.99</strike></strong></p>
                         <p style="color: red">35% Off</p>
@@ -117,7 +210,7 @@ table>tbody>tr>img{
             <div class="row text-center">
                 <div class="col-sm-4">
                     <div class="thumbnail">
-                        <img src="Games/Skyrim.jpg" alt="E3" width="460" height="215">
+                        <a href="https://www.youtube.com/watch?v=9ytwNUMdbcE"><img src="Games/Witness.jpg" alt="The Witness" width="460" height="215"></a>
                         <p><strong>The Witness</strong></p>
                         <p><strong style="color: red; "><strike>$39.99</strike></strong></p>
                         <p style="color: red">45% Off</p>
@@ -127,7 +220,7 @@ table>tbody>tr>img{
                 </div>
                 <div class="col-sm-4">
                     <div class="thumbnail">
-                        <img src="Games/The%20Division.jpg" alt="Division" width="460" height="287.5">
+                        <a href="https://www.youtube.com/watch?v=Nd6evo2X5fw"><img src="Games/Rise-Of-The-Tomb-Raider.jpg" alt="Rise of the Tomb Raider" width="460" height="215"></a>
                         <p><strong>Rise of the Tomb Raider</strong></p>
                         <p><strong style="color: red; "><strike>$59.99</strike></strong></p>
                         <p style="color: red">50% Off</p>
@@ -137,7 +230,7 @@ table>tbody>tr>img{
                 </div>
                 <div class="col-sm-4">
                     <div class="thumbnail">
-                        <img src="Games/Assassins%20Creed.jpg" alt="Assassins" width="460" height="287.5">
+                        <img src="Games/Fallout.jpg" alt="Fallout 4" width="460" height="215">
                         <p><strong>Fallout 4</strong></p>
                         <p><strong style="color: red; "><strike>$59.99</strike></strong></p>
                         <p style="color: red">97% Off</p>
@@ -147,6 +240,40 @@ table>tbody>tr>img{
                 </div>
             </div>
             </div>
+        <div id="row3">
+            <div class="row text-center">
+                <div class="col-sm-4">
+                    <div class="thumbnail">
+                        <img src="Games/Firewatch.jpg" alt="Firewatch" width="460" height="215">
+                        <p><strong>Firewatch</strong></p>
+                        <p><strong style="color: red; "><strike>$19.99</strike></strong></p>
+                        <p style="color: red">50% Off</p>
+                        <p>$9.99</p>
+                        <button class="btn">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="thumbnail">
+                        <img src="Games/Star%20Wars.jpeg" alt="Star Wars" width="460" height="215">
+                        <p><strong>Star Wars Battlefront</strong></p>
+                        <p><strong style="color: red; "><strike>$59.99</strike></strong></p>
+                        <p style="color: red">75% Off</p>
+                        <p>$14.99</p>
+                        <button class="btn">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="thumbnail">
+                        <img src="Games/Elite.jpg" alt="Elite" width="460" height="215">
+                        <p><strong>Elite Dangerous</strong></p>
+                        <p><strong style="color: red; "><strike>$39.99</strike></strong></p>
+                        <p style="color: red">50% Off</p>
+                        <p>$19.99</p>
+                        <button class="btn">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+        </div>
     </tr>
     </tbody>
 </table>
