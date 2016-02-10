@@ -49,10 +49,13 @@
 //fetch results set as object and output HTML
             while ($obj = $results->fetch_object()) {
                 ?>
+        <table>
+            <tbody>
+            <tr>
                 <div id="row1">
                 <div class="col-sm-4">
                     <div class="thumbnail">
-                        <a href="https://www.youtube.com/watch?v=JQtTD5K52xI"><img
+                        <a href="<?php echo $obj-> src; ?>"><img
                                 src="<?php echo $obj->product_img_name; ?>" alt="Game Image" width="460" height="215"></a>
 
                         <p><strong><?php echo $obj->product_name; ?></strong></p>
@@ -77,6 +80,9 @@
         }
         ?>
     </div>
+    </tr>
+    </tbody>
+    </table>
 <!--//                $products_item .= <<<EOT-->
 <!--//    <li class="product">-->
 <!--//    <form method="post" action="cart_update.php">-->
