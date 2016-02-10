@@ -23,7 +23,7 @@
 </style>
 <?php
 try {
-    $dbh = new PDO('mysql:host=127.0.0.1;dbname=G4ME', 'root', '');
+    $dbh = new PDO('mysql:host=127.0.0.1;dbname=G4ME', 'root', 'root');
 
 } catch (PDOException $e) {
     print "Error!: " . $e->getMessage() . "<br/>";
@@ -209,10 +209,10 @@ if(@$_POST['formSubmit'] == "Submit")
     </div>
     <div class="form-group">
     <label>Credit Card</label>
-    <input type="number" name="payment" maxlength="16" placeholder="xxxx-xxxx-xxxx-xxxx"><br>
+    <input type="number" name="payment" maxlength="16" size="16" placeholder="xxxx-xxxx-xxxx-xxxx"><br>
     </div>
     <div class="form-group">
-        <label>Security Code</label><input type="number" name="code" maxlength="4" placeholder="xxx">
+        <label>Security Code</label><input type="number" size="3" name="code" maxlength="4" placeholder="xxx">
     </div>
         <button type="submit" name="formSubmit" value="Submit">Submit</button>
 

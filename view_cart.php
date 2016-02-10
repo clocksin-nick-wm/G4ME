@@ -74,7 +74,6 @@ header('Location:'.$return_url);
                     $product_qty = $cart_itm["product_qty"];
                     $product_price = $cart_itm["product_price"];
                     $product_code = $cart_itm["product_code"];
-                    $product_color = $cart_itm["product_color"];
                     $subtotal = ($product_price * $product_qty); //calculate Price x Qty
 
                     $bg_color = ($b++%2==1) ? 'odd' : 'even'; //class for zebra stripe
@@ -97,9 +96,9 @@ header('Location:'.$return_url);
 
                 $list_tax       = '';
                 foreach($tax_item as $key => $value){ //List all taxes
-                    $list_tax .= $key. ' : '. $currency. sprintf("%01.2f", $value).'<br />';
+                    $list_tax .= $key. ' : '. $currency. sprintf("%1.08f", $value).'<br />';
                 }
-                $shipping_cost = ($shipping_cost)?'Shipping Cost : '.$currency. sprintf("%01.2f", $shipping_cost).'<br />':'';
+                $shipping_cost = ($shipping_cost)?'Shipping Cost : '.$currency. sprintf("%1.08f", $shipping_cost).'<br />':'';
             }
             ?>
             <tr><td colspan="5"><span style="float:right;text-align: right;"><?php echo $shipping_cost. $list_tax; ?>Amount Payable : <?php echo sprintf("%01.2f", $grand_total);?></span></td></tr>
