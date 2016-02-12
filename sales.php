@@ -33,7 +33,7 @@
             </ul>
             <ul class="nav navbar-nav navbar-right">
                 <li><a href="view_cart.php"><span class="glyphicon glyphicon-shopping-cart"></span>Cart</a> </li>
-                <li><a href="createAccount.php"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+                <li><a href="guestCheckout.php"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
                 <li><a href="signin.php"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
             </ul>
         </div>
@@ -43,7 +43,7 @@
         <?php
         $current_url = urlencode($url="http://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI']);
 
-        $results = $mysqli->query("SELECT product_code, product_name, product_desc, product_img_name, price, sales_price, percent_off FROM sales ORDER BY id ASC");
+        $results = $mysqli->query("SELECT src, product_code, product_name, product_desc, product_img_name, price, sales_price, percent_off FROM sales ORDER BY id ASC");
         if($results) {
             $products_item = '<ul class="products">';
 //fetch results set as object and output HTML
@@ -66,11 +66,17 @@
                         <p style="color: red"><?php echo $obj-> percent_off?></p>
 
                         <p><?php echo $currency . $obj->price; ?></p>
+                        <label>
+                            <span>Quantity</span>
+                            <input type="text" size="2" maxlength="2" name="product_qty" value="1" />
+                        </label>
                         <form method="post" action="view_cart.php">
+                            <input type="hidden" name="product_code" value="{$obj->product_code}" />
                             <input type="hidden" name="productID" value="<?php echo $obj->id; ?>">
                             <input type="hidden" name="productName" value="<?php echo $obj->product_name; ?>">
-                            <input type="hidden" name="productPrice" value="<?php echo $obj->product_price; ?>">
-                            <button class="add_to_cart" type="submit">Add to Cart</button>
+                            <input type="hidden" name="productPrice" value="<?php echo $obj->price; ?>">
+                            <input type="hidden" name="type" value="add" />
+                            <div align="center"><button type="submit" class="add_to_cart">Add</button></div>
                         </form>
                     </div>
                 </div>

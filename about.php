@@ -24,8 +24,8 @@
             <li><a href="sales.php">Sales</a></li>
         </ul>
         <ul class="nav navbar-nav navbar-right">
-            <li><a href="cart.php"><span class="glyphicon glyphicon-shopping-cart"></span>Cart</a> </li>
-            <li><a href="createAccount.php"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+            <li><a href="view_cart.php"><span class="glyphicon glyphicon-shopping-cart"></span>Cart</a> </li>
+            <li><a href="guestCheckout.php"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
             <li ><a href="signin.php"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
         </ul>
     </div>

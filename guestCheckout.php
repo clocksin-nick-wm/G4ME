@@ -102,8 +102,8 @@ if(@$_POST['formSubmit'] == "Submit")
             <li><a href="sales.php">Sales</a></li>
         </ul>
         <ul class="nav navbar-nav navbar-right">
-            <li class="active"><a href="cart.php"><span class="glyphicon glyphicon-shopping-cart"></span>Cart</a> </li>
-            <li><a href="createAccount.php"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+            <li><a href="view_cart.php"><span class="glyphicon glyphicon-shopping-cart"></span>Cart</a> </li>
+            <li class="active"><a href="signin.php"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
             <li><a href="signin.php"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
         </ul>
     </div>
@@ -131,14 +131,14 @@ if(@$_POST['formSubmit'] == "Submit")
     <div class="form-group">
         <label>Country:</label>
         <select>
-        <option>United States</option>
-        <option>United Kingdom</option>
+        <option id="US">United States</option>
+        <option id="UK">United Kingdom</option>
     </select>
     </div>
    <div class="form-group">
        <label>State: </label><select>
         <option value=""></option>
-        <option>AL</option>
+        <option id="AL">AL</option>
         <option>Ak</option>
         <option>AZ</option>
         <option>AR</option>
@@ -201,10 +201,10 @@ if(@$_POST['formSubmit'] == "Submit")
         <label>Payment Type:</label>
         <select  id="paymentType" form="info" action="guestCheckout.php">
         <option value="" selected></option>
-        <option value="Visa">Visa</option>
-        <option value="Master Card">Master Card</option>
-        <option value="American Express">American Express</option>
-        <option value="Discover">Discover</option>
+        <option value="Visa" id="visa">Visa</option>
+        <option value="Master Card" id="Master">Master Card</option>
+        <option value="American Express" id="American">American Express</option>
+        <option value="Discover" id="Discover">Discover</option>
     </select>
     </div>
     <div class="form-group">

@@ -1,5 +1,5 @@
 <?php
-$currency = '&#8377; '; //Currency Character or code
+$currency = '$'; //Currency Character or code
 
 $db_username = 'root';
 $db_password = 'root';

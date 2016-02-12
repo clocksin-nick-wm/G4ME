@@ -1,7 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>G4ME</title>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    </head>
+<nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <img src="Logo/G4me%20logo.png" width="125px" height="50px">
+        </div>
+        <ul class="nav navbar-nav">
+            <li><a href="g4me.php">Home</a></li>
+            <li><a href="about.php">About Us/Contact</a></li>
+            <li><a href="products.php">Games</a></li>
+            <li><a href="sales.php">Sales</a></li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+            <li  class="active"><a href="view_cart.php"><span class="glyphicon glyphicon-shopping-cart"></span>Cart</a> </li>
+            <li><a href="createAccount.php"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+            <li><a href="signin.php"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+        </ul>
+    </div>
+</nav>
 <?php
 session_start(); //start session
 include_once("config.php"); //include config file
-
+print_r($_POST);
 //add product to session or create new one
 if(isset($_POST["type"]) && $_POST["type"]=='add' && $_POST["product_qty"]>0)
 {
@@ -103,6 +134,7 @@ header('Location:'.$return_url);
             ?>
             <tr><td colspan="5"><span style="float:right;text-align: right;"><?php echo $shipping_cost. $list_tax; ?>Amount Payable : <?php echo sprintf("%01.2f", $grand_total);?></span></td></tr>
             <tr><td colspan="5"><a href="products.php" class="button">Add More Items</a><button type="submit">Update</button></td></tr>
+            <tr><td colspan="5"><button class="check_out"><a href="guestCheckout.php" style="float: right">Check Out</a> </button></td></tr>
             </tbody>
         </table>
         <input type="hidden" name="return_url" value="<?php
@@ -110,3 +142,5 @@ header('Location:'.$return_url);
         echo $current_url; ?>" />
     </form>
 </div>
+</body>
+    </html>

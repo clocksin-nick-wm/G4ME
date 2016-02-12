@@ -11,9 +11,7 @@
     <!-- Latest compiled JavaScript -->
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
     <style>
-        body {
-            font: 'Roboto Slab', 'serif';
-        }
+
         #align_nav {
             text-align: right;
             text-decoration: none;
@@ -45,7 +43,7 @@
         }
         body {
             font-size: 19px;
-            font-family: 'Open Sans', 'sans-serif';
+            font-family: 'Roboto Slab', 'sans-serif';
             font-weight: 300;
             height: 100%;
         }
@@ -132,8 +130,8 @@
             <li><a href="sales.php">Sales</a></li>
         </ul>
         <ul class="nav navbar-nav navbar-right">
-            <li><a href="cart.php"><span class="glyphicon glyphicon-shopping-cart"></span>Cart</a> </li>
-            <li><a href="createAccount.php"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+            <li><a href="view_cart.php"><span class="glyphicon glyphicon-shopping-cart"></span>Cart</a> </li>
+            <li><a href="guestCheckout.php"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
             <li><a href="signin.php"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
         </ul>
     </div>
