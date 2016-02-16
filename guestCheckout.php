@@ -33,35 +33,6 @@ try {
 
 if(@$_POST['formSubmit'] == "Submit")
 {
-    $errorMessage = "";
-
-    if(empty($_POST['fName']))
-    {
-        $errorMessage = "<li>You forgot to enter your first name.</li>";
-    }
-    if(empty($_POST['lName']))
-    {
-        $errorMessage = "<li>You forgot to enter your last name.</li>";
-    }
-    if(empty($_POST['address']))
-    {
-        $errorMessage = "<li>You forgot to enter your addresss</li>";
-    }
-    if(empty($_POST['city']))
-    {
-        $errorMessage = "<li>You forgot to enter your city</li>";
-    }
-    if(empty($_POST['state']))
-    {
-        $errorMessage = "<li>You forgot to enter your state</li>";
-    }
-    if(empty($_POST['paymetType']))
-    {
-        $errorMessage = "<li>You forgot to enter your payment type</li>";
-    }
-    if(empty($_POST['payment'])){
-        $errorMessage = "<li>You forgot to enter your Debit/Credit Card information.</li>";
-    }
 //        $varfirstName = $_POST['fName'];
 //        $varlastName = $_POST['lName'];
 //        $varuserName = $_POST['user'];
@@ -125,6 +96,10 @@ if(@$_POST['formSubmit'] == "Submit")
                 }
                 $shipping_cost = ($shipping_cost)?'Shipping Cost : '.$currency. sprintf("%1.08f", $shipping_cost).'<br />':'';
             }
+if($result) {
+    echo "Thank You for purchasing ";
+    die();
+}
             ?>
 <nav class="navbar navbar-inverse">
     <div class="container-fluid">
