@@ -14,7 +14,7 @@
         #row1 {
             text-align: center;
     </style>
-
+</head>
     <?php
     session_start();
     include_once("config.php");
