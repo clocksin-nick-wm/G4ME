@@ -32,9 +32,8 @@
 <?php
 session_start(); //start session
 include_once("config.php"); //include config file
-print_r($_POST);
 //add product to session or create new one
-if(isset($_POST["type"]) && $_POST["type"]=='add' && $_POST["product_qty"]>0)
+if(isset($_POST["type"])=='add')
 {
     foreach($_POST as $key => $value){ //add all post vars to new_product array
         $new_product[$key] = filter_var($value, FILTER_SANITIZE_STRING);
@@ -64,7 +63,26 @@ if(isset($_POST["type"]) && $_POST["type"]=='add' && $_POST["product_qty"]>0)
         $_SESSION["cart_products"][$new_product['product_code']] = $new_product; //update or create product session with new item
     }
 }
+$statement2 = $mysqli->prepare("SELECT product_name, price FROM sales WHERE product_code=? LIMIT 1");
+$statement2->bind_param('s', $new_product['product_code']);
+$statement2->execute();
+$statement2->bind_result($product_name, $price);
 
+while($statement2->fetch()){
+
+    //fetch product name, price from db and add to new_product array
+    $new_product["product_name"] = $product_name;
+    $new_product["product_price"] = $price;
+
+    if(isset($_SESSION["cart_products"])){  //if session var already exist
+        if(isset($_SESSION["cart_products"][$new_product['product_code']])) //check item exist in products array
+        {
+            unset($_SESSION["cart_products"][$new_product['product_code']]); //unset old array item
+        }
+    }
+    $_SESSION["cart_products"][$new_product['product_code']] = $new_product; //update or create product session with new item
+
+}
 
 //update or remove items
 if(isset($_POST["product_qty"]) || isset($_POST["remove_code"]))
@@ -96,6 +114,7 @@ header('Location:'.$return_url);
             <?php
             if(isset($_SESSION["cart_products"])) //check session var
             {
+                print_r($_POST);
                 $total = 0; //set initial total value
                 $b = 0; //var for zebra stripe table
                 foreach ($_SESSION["cart_products"] as $cart_itm)

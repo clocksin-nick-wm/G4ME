@@ -44,7 +44,7 @@
         <?php
         $current_url = urlencode($url="http://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI']);
 
-        $results = $mysqli->query("SELECT src, product_code, product_name, product_desc, product_img_name, price, sales_price, percent_off FROM sales ORDER BY id ASC");
+        $results = $mysqli->query("SELECT src, product_code, product_name, product_desc, product_img_name, price, sales_price, percent_off, id FROM sales ORDER BY id ASC");
         if($results) {
             $products_item = '<ul class="products">';
 //fetch results set as object and output HTML
