@@ -18,6 +18,7 @@
     <?php
     session_start();
     include_once("config.php");
+
     ?>
 
     <nav class="navbar navbar-inverse">
