@@ -15,7 +15,7 @@
 <nav class="navbar navbar-inverse">
     <div class="container-fluid">
         <div class="navbar-header">
-            <img src="Logo/G4me%20logo.png" width="125px" height="50px">
+            <img src="Logo/G4me%20logo.png" width="100px" height="50px">
         </div>
         <ul class="nav navbar-nav">
             <li><a href="g4me.php">Home</a></li>
@@ -55,9 +55,10 @@
     <div class="row">
         <div class="col-sm-8">
             <h2>About G4ME</h2>
-            <h4>Lorem ipsum..</h4>
-            <p>Lorem ipsum..</p>
-            <button class="btn btn-default btn-lg">Get in Touch</button>
+            <h4>Est. 2016</h4>
+            <p>G4ME was designed to help give gamers games for cheap. Steam sales help us to gain our games. From these sales e slash prices and
+            redistribute them. All our sales go to different charity organizations to help not only give back to gamers but for those in need.</p>
+            <button class="btn btn-default btn-lg" id="contact">Get in Touch</button>
         </div>
         <div class="col-sm-4">
             <span class="glyphicon glyphicon-gift logo"></span>
@@ -77,6 +78,8 @@
         </div>
     </div>
 </div>
+<script src="jquery.js" type="text/javascript"></script>
+<script src="onClick.js" type="text/javascript"></script>
 <footer>
 
 </footer>

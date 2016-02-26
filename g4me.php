@@ -41,10 +41,6 @@
         html {
             height: 100%;
         }
-        body {
-            font-size: 19px;
-            font-family: 'Roboto Slab', 'sans-serif';
-            font-weight: 300;
             height: 100%;
         }
         h1,
@@ -121,7 +117,7 @@
 <nav class="navbar navbar-inverse">
     <div class="container-fluid">
         <div class="navbar-header">
-            <img src="Logo/G4me%20logo.png" width="125px" height="50px">
+            <img src="Logo/G4me%20logo.png" width="100px" height="50px">
         </div>
         <ul class="nav navbar-nav">
             <li class="active"><a href="g4me.php">Home</a></li>

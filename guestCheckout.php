@@ -96,8 +96,11 @@ if(@$_POST['formSubmit'] == "Submit")
                 }
                 $shipping_cost = ($shipping_cost)?'Shipping Cost : '.$currency. sprintf("%1.08f", $shipping_cost).'<br />':'';
             }
-if($result) {
-    echo "Thank You for purchasing ";
+if($result){
+    echo ' Thank You '.  $_POST['fName']  . ' for purchasing awesome games <br> ';
+    echo ' Your product key(s) will be sent to '. $_POST['email']. '<br>';
+    echo ' Click the link below to return to the home page <br> ';
+    echo ' <a href="g4me.php"> Return Home </a>';
     die();
 }
             ?>

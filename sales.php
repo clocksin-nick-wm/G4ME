@@ -56,7 +56,7 @@
                 <div id="row1">
                 <div class="col-sm-4">
                     <div class="thumbnail">
-                        <a href="<?php echo $obj-> src; ?>"><img
+                        <a href="<?php echo $obj-> src; ?>" target="_blank"><img
                                 src="<?php echo $obj->product_img_name; ?>" alt="Game Image" width="460" height="215"></a>
 
                         <p><strong><?php echo $obj->product_name; ?></strong></p>

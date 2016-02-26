@@ -114,7 +114,6 @@ header('Location:'.$return_url);
             <?php
             if(isset($_SESSION["cart_products"])) //check session var
             {
-                print_r($_POST);
                 $total = 0; //set initial total value
                 $b = 0; //var for zebra stripe table
                 foreach ($_SESSION["cart_products"] as $cart_itm)
@@ -146,14 +145,14 @@ header('Location:'.$return_url);
 
                 $list_tax       = '';
                 foreach($tax_item as $key => $value){ //List all taxes
-                    $list_tax .= $key. ' : '. $currency. sprintf("%1.08f", $value).'<br />';
+                    $list_tax .= $key. ' : '. $currency. sprintf("%01.2f", $value).'<br />';
                 }
-                $shipping_cost = ($shipping_cost)?'Shipping Cost : '.$currency. sprintf("%1.08f", $shipping_cost).'<br />':'';
+                $shipping_cost = ($shipping_cost)?'Shipping Cost : '.$currency. sprintf("%01.2f", $shipping_cost).'<br />':'';
             }
             ?>
             <tr><td colspan="5"><span style="float:right;text-align: right;"><?php echo $shipping_cost. $list_tax; ?>Amount Payable : <?php echo sprintf("%01.2f", $grand_total);?></span></td></tr>
-            <tr><td colspan="5"><a href="products.php" class="button">Add More Items</a><button type="submit">Update</button></td></tr>
-            <tr><td colspan="5"><button class="check_out"><a href="guestCheckout.php" style="float: right">Check Out</a> </button></td></tr>
+            <tr><td colspan="5"><a href="products.php" class="button">Add More Items</a><br><button type="submit">Update</button></td></tr>
+            <tr><td colspan="5"><button class="check_out"><a href="guestCheckout.php" style="text-decoration: none;">Check Out</a></button></td></tr>
             </tbody>
         </table>
         <input type="hidden" name="return_url" value="<?php
